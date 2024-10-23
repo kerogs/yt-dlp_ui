@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #111115;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  max-width: 1600px;
+  margin: 20px auto;
+  padding: 0 20px;
+  z-index: 9998;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 20px;
+  border-radius: 10px;
+  align-items: center;
+  background-color: rgba(63, 63, 77, 0.1254901961);
+  backdrop-filter: blur(16px);
+}
+header nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 17px;
+}
+header nav ul a {
+  text-decoration: none;
+}
+header nav ul li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  fill: #fff;
+}
+header nav ul li.logo {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background-color: #fe3535;
+  color: #fff;
+}
+header nav ul li.logo:hover {
+  background-color: #fe0202;
+}
+header nav ul li.badge {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background-color: #20202a;
+  color: #fff;
+}
+header nav ul li.badge:hover {
+  background-color: #363647;
+}
+header nav ul li.actbase {
+  position: relative;
+}
+header nav ul li.actbase::before {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  border-radius: 6px;
+  background-color: #fe3535;
+  transition: 0.2s;
+  border-radius: 99px;
+}
+header nav ul li.actbase:hover {
+  color: #fe3535;
+  fill: #fe3535;
+}
+header nav ul li.actbase:hover::before {
+  width: 100%;
+}
+
+main {
+  max-width: 1600px;
+  padding: 0 20px;
+  margin: 60px auto;
+}
+
+.videoList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.videoList a {
+  text-decoration: none;
+}
+.videoList .video {
+  width: 100%;
+  height: 300px;
+  background-color: #191920;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  transition: 0.2s;
+}
+.videoList .video .img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0 0 30px 30px;
+  transition: 0.4s;
+  transition-delay: 0.2s;
+}
+.videoList .video .descVid {
+  padding: 10px;
+}
+.videoList .video .descVid p.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-weight: 500;
+  color: #fff;
+  transition: 0.4s;
+  transition-delay: 0.2s;
+}
+.videoList .video .descVid p.descvid {
+  margin-top: 10px;
+  color: #5a5a66;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  transition-delay: 0.2s;
+}
+.videoList .video:hover {
+  filter: drop-shadow(0 0 40px rgba(254, 53, 53, 0.1254901961));
+  border: 1px solid #fe3535;
+}
+.videoList .video:hover .img img {
+  height: 140px;
+  border-radius: 0;
+}
+.videoList .video:hover .descVid p.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-weight: 500;
+  color: #fff;
+}
+.videoList .video:hover .descVid p.descvid {
+  margin-top: 10px;
+  color: #5a5a66;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 5 !important;
+  -webkit-line-clamp: 5 !important;
+  -webkit-box-orient: vertical;
+}
+
+.ccenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dlvid form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dlvid form input {
+  width: 400px;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid #20202a;
+  background-color: #20202a;
+  font-size: 16px;
+  color: #5a5a66;
+  transition: 0.2s;
+}
+.dlvid form input:focus {
+  border: 1px solid #fe3535;
+  box-shadow: 0 0 20px rgba(254, 53, 53, 0.1254901961);
+}
+.dlvid form input:valid {
+  color: #fff;
+  border: 1px solid #fe3535;
+  box-shadow: 0 0 20px rgba(254, 53, 53, 0.1254901961);
+}
+.dlvid form input:valid ~ button {
+  background-color: #fe3535;
+  box-shadow: 0 0 20px rgba(254, 53, 53, 0.1254901961);
+}
+.dlvid form button {
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 6px;
+  background-color: #20202a;
+  fill: #fff;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.dlvid form button:hover {
+  background-color: #fe0202;
+}/*# sourceMappingURL=style.css.map */
